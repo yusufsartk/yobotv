@@ -30,6 +30,8 @@
             overflow-y: auto;
             height: 100vh; /* Tam ekran boyu */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            border: 5px solid #f5a623; /* Çerçeve rengi */
+            border-radius: 12px;
         }
 
         .title {
@@ -52,6 +54,18 @@
             border-radius: 12px;
             overflow: hidden;
             margin-bottom: 30px;
+        }
+
+        .fullscreen-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
         }
 
         .playlist-item {
@@ -109,12 +123,13 @@
             <video id="video" width="100%" height="100%" controls muted>
                 Tarayıcınız HLS akışını desteklemiyor.
             </video>
+            <button class="fullscreen-button" id="fullscreen-button">Tam Ekran</button>
         </div>
     </div>
 
     <!-- Sağ Menü Playlist -->
     <div class="sidebar">
-        <h3>KANALLAR</h3>
+        <h3>Playlist</h3>
         <div class="playlist-item" data-src="https://due.b7021e57df9f3d9b.click/itis/8c1437d28413db5112720e3ce0579154/playlist.m3u8">beIN SPORTS</div>
         <div class="playlist-item" data-src="https://ciner-live.daioncdn.net/showtv/showtv.m3u8">Show TV</div>
         <div class="playlist-item" data-src="https://test-streams.mux.dev/pts_shift/master.m3u8">Kanal 3</div>
@@ -125,6 +140,7 @@
     <script src="https://cdn.jsdelivr.net/npm/hls.js@1.4.0"></script>
     <script>
         var video = document.getElementById('video');
+        var fullscreenButton = document.getElementById('fullscreen-button');
         var welcomeMessage = document.getElementById('welcome-message');
 
         // Hoşgeldiniz mesajını göster
@@ -167,6 +183,23 @@
         } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
             video.src = firstChannel;
         }
+
+        // Tam ekran modu etkinleştir
+        fullscreenButton.addEventListener('click', function() {
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.webkitEnterFullscreen) { // iOS için
+                video.webkitEnterFullscreen();
+            } else if (video.webkitRequestFullscreen) { // Safari için
+                video.webkitRequestFullscreen();
+            } else if (video.mozRequestFullScreen) { // Firefox için
+                video.mozRequestFullScreen();
+            } else if (video.msRequestFullscreen) { // IE/Edge için
+                video.msRequestFullscreen();
+            } else {
+                console.log("Tam ekran modu desteklenmiyor.");
+            }
+        });
     </script>
 </body>
 </html>
