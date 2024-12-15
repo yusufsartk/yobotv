@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YOBO TV</title>
+    <title>Canlı Maç İzleme</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -46,13 +46,13 @@
 </head>
 <body>
     <div class="container">
-        <div class="title">YOBO TV</div>
-        
+        <div class="title">Canlı Maç İzleme</div>
+
         <!-- Oynatıcı -->
         <div class="player-container">
-            <iframe src="https://due.b7021e57df9f3d9b.click/itis/8c1437d28413db5112720e3ce0579154/playlist.m3u8"
-                width="100%" height="100%" frameborder="0" allowfullscreen>
-            </iframe>
+            <video id="video" width="100%" height="100%" controls>
+                Tarayıcınız HLS akışını desteklemiyor.
+            </video>
         </div>
 
         <!-- Kanal Linkleri -->
@@ -62,5 +62,25 @@
             <a href="https://www.dailymotion.com/user/YOUR_DAILYMOTION" target="_blank" class="channel-link">Dailymotion Kanalı</a>
         </div>
     </div>
+
+    <!-- HLS.js Kütüphanesi -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.4.0"></script>
+    <script>
+        var video = document.getElementById('video');
+        
+        // HLS.js kontrolü
+        if (Hls.isSupported()) {
+            var hls = new Hls();
+            hls.loadSource('https://due.b7021e57df9f3d9b.click/itis/8c1437d28413db5112720e3ce0579154/playlist.m3u8'); // Verdiğiniz M3U8 dosyasının URL'si
+            hls.attachMedia(video);
+            hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                console.log("HLS akışı başlatıldı");
+            });
+        }
+        // Eğer tarayıcı natively HLS destekliyorsa, direkt video etiketi kullanabiliriz.
+        else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            video.src = 'https://due.b7021e57df9f3d9b.click/itis/8c1437d28413db5112720e3ce0579154/playlist.m3u8'; // Verdiğiniz M3U8 dosyasının URL'si
+        }
+    </script>
 </body>
 </html>
