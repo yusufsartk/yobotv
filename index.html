@@ -114,7 +114,7 @@
         </a>
 
         <!-- Hoşgeldiniz Mesajı -->
-        <div id="welcome-message">Yobo Tv'ye Hoşgeldiniz</div>
+        <div id="welcome-message">yobotv.vercel.app Hoşgeldiniz</div>
 
         <!-- Oynatıcı -->
         <div class="player-container">
@@ -127,7 +127,7 @@
 
     <!-- Sağ Menü Playlist -->
     <div class="sidebar">
-        <h3>Playlist</h3>
+        <h3>Kanallar</h3>
         <div class="playlist-item" data-src="https://due.b7021e57df9f3d9b.click/itis/8c1437d28413db5112720e3ce0579154/playlist.m3u8">beIN SPORTS</div>
         <div class="playlist-item" data-src="https://ciner-live.daioncdn.net/showtv/showtv.m3u8">Show TV</div>
         <div class="playlist-item" data-src="https://test-streams.mux.dev/pts_shift/master.m3u8">Kanal 3</div>
@@ -186,6 +186,8 @@
         fullscreenButton.addEventListener('click', function() {
             if (video.requestFullscreen) {
                 video.requestFullscreen();
+            } else if (video.webkitEnterFullscreen) { // iOS için
+                video.webkitEnterFullscreen();
             } else if (video.webkitRequestFullscreen) { // Safari için
                 video.webkitRequestFullscreen();
             } else if (video.mozRequestFullScreen) { // Firefox için
