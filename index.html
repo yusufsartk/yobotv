@@ -1,48 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>İnat Box</title>
-    <style>
-        body {
-            background-color: #222;
-            color: #fff;
-            font-family: Arial, sans-serif;
-        }
+  <title>İnat Box</title>
+  <style>
+    body {
+      background-color: #222;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0; /* Remove default margin for better responsiveness */
+    }
 
-        .container {
-            max-width: 300px;
-            margin: 0 auto;
-        }
+    .container {
+      max-width: 300px;
+      margin: 0 auto;
+      padding: 10px; /* Add padding for better spacing on smaller screens */
+    }
 
-        .platform {
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            border-bottom: 1px solid #333;
-        }
+    .platform {
+      display: flex;
+      align-items: center;
+      padding: 5px; /* Reduce padding for smaller screens */
+      border-bottom: 1px solid #333;
+    }
 
-        .platform img {
-            width: 30px;
-            height: 30px;
-            margin-right: 10px;
-        }
-    </style>
+    .platform img {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    /* Media queries for responsive adjustments */
+    @media (max-width: 768px) {
+      .container {
+        max-width: 90%; /* Adjust max-width for smaller screens */
+      }
+
+      .platform {
+        font-size: 0.8em; /* Reduce font size for better readability on smaller screens */
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>İnat Box</h1>
-        <div class="platform">
-            <a href="https://www.gain.com" target="_blank"> 
-                <img src="gain.png" alt="Gain">
-                <span>Gain</span>
-            </a>
-        </div>
-        <div class="platform">
-            <a href="https://www.blutv.com" target="_blank">
-                <img src="blutv.png" alt="BluTV">
-                <span>BluTV</span>
-            </a>
-        </div>
+  <div class="container">
+    <h1>İnat Box</h1>
+    <div class="platform">
+      <a href="https://www.gain.com" target="_blank"> 
+        <img src="gain.png" alt="Gain">
+        <span>Gain</span>
+      </a>
     </div>
+    <div class="platform">
+      <a href="https://www.blutv.com" target="_blank">
+        <img src="blutv.png" alt="BluTV">
+        <span>BluTV</span>
+      </a>
+    </div>
+  </div>
 </body>
 </html>
