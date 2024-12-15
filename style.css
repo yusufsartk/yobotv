@@ -3,37 +3,34 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #121212; /* Koyu arka plan */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
 }
 
 /* Sayfa içeriği için genel kapsayıcı */
 .container {
-    max-width: 900px;
-    margin: 20px auto;
+    max-width: 1000px;
+    margin: 20px;
     padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #1c1c1c;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
 /* Başlık stili */
 .title {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
-    color: #1a73e8; /* Renk tonunu değiştirebilirsiniz */
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ff5733; /* Canlı turuncu renk */
     margin-bottom: 20px;
-}
-
-/* Oynatıcı kapsayıcısı */
-.player-container {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    background-color: #000; /* Video arka plan rengi */
-    border-radius: 8px;
-    overflow: hidden;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 /* Hoşgeldiniz mesajı stili */
@@ -42,13 +39,38 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
-    font-size: 1.5rem;
-    padding: 20px;
-    border-radius: 8px;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 15px;
+    border-radius: 10px;
     display: none;
     z-index: 10;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Hoşgeldiniz mesajı animasyonu */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Oynatıcı kapsayıcısı */
+.player-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-color: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 20px;
 }
 
 /* Video oynatıcı stil */
@@ -56,12 +78,30 @@ video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 10px;
 }
 
-/* HLS.js ile ilgili hata mesajı stili */
+/* Yükleniyor veya hata mesajı */
 .error-message {
-    color: red;
+    color: #ff4444;
     font-size: 1.2rem;
     text-align: center;
     margin-top: 20px;
+}
+
+/* Butonlar */
+button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #ff5733;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #c13c19;
 }
