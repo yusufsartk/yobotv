@@ -56,18 +56,6 @@
             margin-bottom: 30px;
         }
 
-        .fullscreen-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
         .playlist-item {
             margin: 10px 0;
             padding: 10px;
@@ -111,7 +99,7 @@
 <body>
     <div class="container">
         <!-- Logo -->
-        <a href="https://yobotv.vercel.app/" target="_blank">
+        <a href="https://yobotv.vercel.app/">
             <img src="https://github.com/yusufsartk/yobotv/blob/main/logo.png?raw=true" alt="YOBO TV Logo" class="logo">
         </a>
 
@@ -123,7 +111,6 @@
             <video id="video" width="100%" height="100%" controls muted>
                 Tarayıcınız HLS akışını desteklemiyor.
             </video>
-            <button class="fullscreen-button" id="fullscreen-button">Tam Ekran</button>
         </div>
     </div>
 
@@ -140,7 +127,6 @@
     <script src="https://cdn.jsdelivr.net/npm/hls.js@1.4.0"></script>
     <script>
         var video = document.getElementById('video');
-        var fullscreenButton = document.getElementById('fullscreen-button');
         var welcomeMessage = document.getElementById('welcome-message');
 
         // Hoşgeldiniz mesajını göster
@@ -183,23 +169,6 @@
         } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
             video.src = firstChannel;
         }
-
-        // Tam ekran modu etkinleştir
-        fullscreenButton.addEventListener('click', function() {
-            if (video.requestFullscreen) {
-                video.requestFullscreen();
-            } else if (video.webkitEnterFullscreen) { // iOS için
-                video.webkitEnterFullscreen();
-            } else if (video.webkitRequestFullscreen) { // Safari için
-                video.webkitRequestFullscreen();
-            } else if (video.mozRequestFullScreen) { // Firefox için
-                video.mozRequestFullScreen();
-            } else if (video.msRequestFullscreen) { // IE/Edge için
-                video.msRequestFullscreen();
-            } else {
-                console.log("Tam ekran modu desteklenmiyor.");
-            }
-        });
     </script>
 </body>
 </html>
