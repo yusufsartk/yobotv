@@ -16,8 +16,8 @@
 
         /* Kayan Duyuru Alanı */
         .announcement {
-            position: fixed;  /* Sabit yaparak ekranın üst kısmında kalmasını sağlıyoruz */
-            top: 0;  /* Üst kısmı sıfırlıyoruz */
+            position: fixed;  /* Sabit yaparak ekranın alt kısmında kalmasını sağlıyoruz */
+            bottom: 0;  /* Alt kısmı sıfırlıyoruz */
             left: 0;
             width: 100%;
             background-color: #f5a623;
@@ -60,7 +60,7 @@
 
         .player-container {
             width: 100%;
-            height: 500px;
+            height: 100%;
             position: relative;
             border: 5px solid #f5a623; /* Video etrafına turuncu çerçeve ekledim */
             border-radius: 12px; /* Çerçeve köşelerini yuvarladım */
@@ -68,6 +68,7 @@
             margin-bottom: 30px; /* Video ve altındaki içerik arasına boşluk ekledim */
         }
 
+        /* Sidebar - Reklam alanları */
         .sidebar {
             position: fixed;
             top: 0;
@@ -108,10 +109,54 @@
             display: none;
         }
 
+        /* Responsive Tasarım */
+        @media screen and (max-width: 768px) {
+            .logo {
+                width: 200px; /* Mobilde logo boyutunu küçülttük */
+            }
+
+            .player-container {
+                height: 300px; /* Mobilde video yüksekliğini küçülttük */
+            }
+
+            .sidebar {
+                width: 150px; /* Reklam alanlarını mobilde küçülttük */
+            }
+
+            .announcement {
+                font-size: 16px; /* Kayan duyuru alanındaki yazı boyutunu mobilde küçülttük */
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .container {
+                padding: 15px; /* Mobilde padding küçültüldü */
+            }
+
+            .title {
+                font-size: 20px; /* Başlık fontunu mobilde küçülttük */
+            }
+
+            .player-container {
+                height: 200px; /* Video boyutunu mobilde daha da küçülttük */
+            }
+
+            .sidebar {
+                width: 120px; /* Reklam alanları daha da küçültüldü */
+            }
+
+            .sidebar .ad {
+                font-size: 14px; /* Reklam yazı boyutunu küçülttük */
+            }
+
+            .logo {
+                width: 150px; /* Mobilde logo daha da küçüldü */
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Kayan Duyuru Alanı -->
+    <!-- Kayan Duyuru Alanı (En alta taşındı) -->
     <div class="announcement">
         Duyuru: Yeni Yobo TV programı başladı! Kaçırmayın!
     </div>
