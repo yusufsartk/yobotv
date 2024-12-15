@@ -148,13 +148,18 @@
             setTimeout(function() {
                 welcomeMessage.style.display = 'none';
             }, 3000); // 3 saniye sonra mesajı gizler
-
-            // Video otomatik olarak başlat
-            video.muted = false;  // Sesin kapalı olmaması için 'muted' özelliğini 'false' yapıyoruz
-            video.play().catch(function(error) {
-                console.log("Otomatik başlatma hatası: ", error);
-            });
         };
+
+        // Ses açma ve video oynatmayı kullanıcı etkileşimi ile başlatma
+        video.addEventListener('click', function() {
+            if (video.paused) {
+                video.play().then(function() {
+                    console.log('Video oynatılmaya başlandı');
+                }).catch(function(error) {
+                    console.log("Video başlatılamadı: ", error);
+                });
+            }
+        });
 
         // HLS.js kontrolü
         if (Hls.isSupported()) {
