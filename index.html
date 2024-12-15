@@ -150,6 +150,7 @@
             }, 3000); // 3 saniye sonra mesajı gizler
 
             // Video otomatik olarak başlat
+            video.muted = false;  // Sesin kapalı olmaması için 'muted' özelliğini 'false' yapıyoruz
             video.play().catch(function(error) {
                 console.log("Otomatik başlatma hatası: ", error);
             });
