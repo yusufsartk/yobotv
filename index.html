@@ -57,6 +57,8 @@
         }
 
         .playlist-item {
+            display: flex;
+            align-items: center;
             margin: 10px 0;
             padding: 10px;
             background-color: #555;
@@ -68,6 +70,13 @@
 
         .playlist-item:hover {
             background-color: #f5a623;
+        }
+
+        .playlist-item img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            border-radius: 8px;
         }
 
         #welcome-message {
@@ -116,11 +125,19 @@
 
     <!-- Sağ Menü Playlist -->
     <div class="sidebar">
-        <h3>Kanallar</h3>
-        <div class="playlist-item" data-src="https://due.b7021e57df9f3d9b.click/itis/8c1437d28413db5112720e3ce0579154/playlist.m3u8">beIN SPORTS</div>
-        <div class="playlist-item" data-src="https://ciner-live.daioncdn.net/showtv/showtv.m3u8">Show TV</div>
-        <div class="playlist-item" data-src="https://test-streams.mux.dev/pts_shift/master.m3u8">Kanal 3</div>
-        <div class="playlist-item" data-src="https://test-streams.mux.dev/test_001/stream.m3u8">Kanal 4</div>
+        <h3>Playlist</h3>
+        <div class="playlist-item" data-src="https://due.b7021e57df9f3d9b.click/itis/8c1437d28413db5112720e3ce0579154/playlist.m3u8">
+            <img src="https://via.placeholder.com/50" alt="beIN SPORTS Logo">beIN SPORTS
+        </div>
+        <div class="playlist-item" data-src="https://ciner-live.daioncdn.net/showtv/showtv.m3u8">
+            <img src="https://via.placeholder.com/50" alt="Show TV Logo">Show TV
+        </div>
+        <div class="playlist-item" data-src="https://test-streams.mux.dev/pts_shift/master.m3u8">
+            <img src="https://via.placeholder.com/50" alt="Kanal 3 Logo">Kanal 3
+        </div>
+        <div class="playlist-item" data-src="https://test-streams.mux.dev/test_001/stream.m3u8">
+            <img src="https://via.placeholder.com/50" alt="Kanal 4 Logo">Kanal 4
+        </div>
     </div>
 
     <!-- HLS.js Kütüphanesi -->
