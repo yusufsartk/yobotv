@@ -14,28 +14,6 @@
             overflow-x: hidden; /* Sağ ve sol reklam alanları taşmasın diye */
         }
 
-        /* Kayan Duyuru Alanı */
-        .announcement {
-            position: fixed;  /* Sabit yaparak ekranın alt kısmında kalmasını sağlıyoruz */
-            bottom: 0;  /* Alt kısmı sıfırlıyoruz */
-            left: 0;
-            width: 100%;
-            background-color: #f5a623;
-            color: #2c2c2c;
-            font-size: 18px;
-            font-weight: bold;
-            padding: 10px;
-            text-align: center;
-            animation: slide 10s linear infinite;
-            z-index: 100; /* Kayan yazının üstte görünmesi için */
-        }
-
-        /* Kayan mesaj animasyonu */
-        @keyframes slide {
-            0% { left: 100%; }
-            100% { left: -100%; }
-        }
-
         .container {
             max-width: 900px;
             margin: 20px auto;
@@ -56,6 +34,7 @@
             width: 250px; /* Logo genişliği */
             height: auto;
             margin-bottom: 20px; /* Başlık ve video arasında biraz boşluk bırakır */
+            cursor: pointer; /* Logo üzerine geldiğinde imleci el şeklinde gösterir */
         }
 
         .player-container {
@@ -90,10 +69,6 @@
             .player-container {
                 height: 300px; /* Mobilde video yüksekliğini küçülttük */
             }
-
-            .announcement {
-                font-size: 16px; /* Kayan duyuru alanındaki yazı boyutunu mobilde küçülttük */
-            }
         }
 
         @media screen and (max-width: 480px) {
@@ -116,14 +91,11 @@
     </style>
 </head>
 <body>
-    <!-- Kayan Duyuru Alanı (En alta taşındı) -->
-    <div class="announcement">
-        Duyuru: 14.03.12 ❤️ ∞ YC
-    </div>
-
     <div class="container">
         <!-- Logo -->
-        <img src="https://github.com/yusufsartk/yobotv/blob/main/logo.png?raw=true" alt="YOBO TV Logo" class="logo"> <!-- Logo resmi burada ekleniyor -->
+        <a href="https://yobotv.vercel.app/" target="_blank">
+            <img src="https://github.com/yusufsartk/yobotv/blob/main/logo.png?raw=true" alt="YOBO TV Logo" class="logo">
+        </a>
 
         <!-- Hoşgeldiniz Mesajı -->
         <div id="welcome-message">yobotv.vercel.app Hoşgeldiniz</div>
