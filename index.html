@@ -18,11 +18,16 @@
             background-color: white;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
         .title {
-            text-align: center;
             font-size: 24px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+        }
+        .logo {
+            width: 250px; /* Logo genişliği */
+            height: auto;
+            margin-bottom: 20px; /* Başlık ve video arasında biraz boşluk bırakır */
         }
         .player-container {
             width: 100%;
@@ -45,7 +50,11 @@
 </head>
 <body>
     <div class="container">
+        <!-- Başlık -->
         <div class="title">YOBO TV</div>
+        
+        <!-- Logo -->
+        <img src="path/to/your/logo.png" alt="YOBO TV Logo" class="logo"> <!-- Logo resmi burada ekleniyor -->
 
         <!-- Hoşgeldiniz Mesajı -->
         <div id="welcome-message">yobotv.vercel.app Hoşgeldiniz</div>
