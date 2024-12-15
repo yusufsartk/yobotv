@@ -1,0 +1,12 @@
+/* ... (önceki örneğimizdeki CSS) ... */
+
+.movie-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+}
+
+.movie-card img {
+  width: 200px;
+  height: 300px;
+}
