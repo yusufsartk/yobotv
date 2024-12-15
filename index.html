@@ -1,50 +1,85 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yobo TV</title>
+    <title>TV İzleme Sitesi</title>
     <style>
         body {
-            background-color: #222;
-            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
+        }
+        header {
+            background-color: #1f1f1f;
+            padding: 15px;
             text-align: center;
         }
-        .platform {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+        header h1 {
+            margin: 0;
+        }
+        main {
             padding: 20px;
-            border-bottom: 1px solid #333;
+            text-align: center;
         }
-        .platform img {
-            width: 50px;
-            height: 50px;
+        .video-container {
+            margin: auto;
+            width: 80%;
+            max-width: 720px;
+            background-color: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
-        .platform a {
-            text-decoration: none;
-            color: white;
+        video {
+            width: 100%;
+            height: auto;
+        }
+        .channel-list {
+            margin: 20px auto;
+            width: 80%;
+            max-width: 720px;
+            text-align: left;
+        }
+        .channel {
+            padding: 10px;
+            background-color: #1f1f1f;
+            margin: 5px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .channel:hover {
+            background-color: #333;
         }
     </style>
 </head>
 <body>
-    <h1>Yobo TV</h1>
-    <div class="platform">
-        <img src="gain.png" alt="Gain">
-        <a href="https://dizipal823.com/bolum/ask-adasi-1x87">Gain</a>
-    </div>
-    <div class="platform">
-        <img src="blutv.png" alt="BluTV">
-        <a href="https://www.blutv.com">BluTV</a>
-    </div>
-    <div>
-        <button onclick="geri()">Geri</button>
-        <button onclick="ileri()">İleri</button>
-    </div>
-
+    <header>
+        <h1>TV İzleme Sitesi</h1>
+    </header>
+    <main>
+        <div class="video-container">
+            <video id="tvPlayer" controls autoplay>
+                <source src="channel1.mp4" type="video/mp4">
+                Tarayıcınız video etiketini desteklemiyor.
+            </video>
+        </div>
+        <div class="channel-list">
+            <h2>Kanallar</h2>
+            <div class="channel" onclick="changeChannel('channel1.mp4')">Kanal 1</div>
+            <div class="channel" onclick="changeChannel('channel2.mp4')">Kanal 2</div>
+            <div class="channel" onclick="changeChannel('channel3.mp4')">Kanal 3</div>
+        </div>
+    </main>
     <script>
-        // İleri ve geri butonlarının işlevselliği için JavaScript kodu buraya gelecek
-        // Örneğin, bir dizi oluşturup bu dizi üzerinden gezinme işlemi yapabilirsiniz.
+        function changeChannel(channelSrc) {
+            const player = document.getElementById('tvPlayer');
+            player.src = channelSrc;
+            player.play();
+        }
     </script>
 </body>
 </html>
