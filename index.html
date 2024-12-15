@@ -1,27 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
-    <title>Bakımdayız</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yobo TV</title>
     <style>
         body {
+            background-color: #222;
+            color: white;
             text-align: center;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
         }
-        h1 {
-            color: #333;
-            font-size: 3rem;
-            margin-top: 100px;
+        .platform {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            border-bottom: 1px solid #333;
         }
-        p {
-            color: #666;
-            font-size: 1.5rem;
+        .platform img {
+            width: 50px;
+            height: 50px;
+        }
+        .platform a {
+            text-decoration: none;
+            color: white;
         }
     </style>
 </head>
 <body>
-    <h1>Sitemiz Bakımda</h1>
-    <p>Sitemiz şu an bakımdadır. En kısa sürede tekrar online olacak. Takipte kalın!</p>
-    <p>Tahmini bakım süresi: 2 saat</p>
+    <h1>Yobo TV</h1>
+    <div class="platform">
+        <img src="gain.png" alt="Gain">
+        <a href="https://www.gain.com">Gain</a>
+    </div>
+    <div class="platform">
+        <img src="blutv.png" alt="BluTV">
+        <a href="https://www.blutv.com">BluTV</a>
+    </div>
+    <div>
+        <button onclick="geri()">Geri</button>
+        <button onclick="ileri()">İleri</button>
+    </div>
+
+    <script>
+        // İleri ve geri butonlarının işlevselliği için JavaScript kodu buraya gelecek
+        // Örneğin, bir dizi oluşturup bu dizi üzerinden gezinme işlemi yapabilirsiniz.
+    </script>
 </body>
 </html>
