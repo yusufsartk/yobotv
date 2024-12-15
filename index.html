@@ -16,8 +16,8 @@
 
         /* Kayan Duyuru Alanı */
         .announcement {
-            position: absolute;
-            top: 0;
+            position: fixed;  /* Sabit yaparak ekranın üst kısmında kalmasını sağlıyoruz */
+            top: 0;  /* Üst kısmı sıfırlıyoruz */
             left: 0;
             width: 100%;
             background-color: #f5a623;
@@ -27,6 +27,7 @@
             padding: 10px;
             text-align: center;
             animation: slide 10s linear infinite;
+            z-index: 100; /* Kayan yazının üstte görünmesi için */
         }
 
         /* Kayan mesaj animasyonu */
